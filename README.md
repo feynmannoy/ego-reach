@@ -1,6 +1,6 @@
 # ego-reach
 
-> 仓库叫 `ego-reach`；skill 名仍是 `agent-reach`（因为登录态继承自 **ego lite**），命令是 `/skill:agent-reach`。
+> 名字来自 **ego lite**：登录态全部继承自 ego lite。命令：`/skill:ego-reach`。
 
 给 Pi（以及任何支持 Agent Skills 的 CLI agent）用的**只读多平台调研 skill**：B站、小红书、知乎、Reddit、GitHub、掘金、CSDN、V2EX、博客园。
 
@@ -32,7 +32,7 @@
 ## 安装
 
 ```bash
-git clone https://github.com/feynmannoy/ego-reach ~/.agents/skills/agent-reach
+git clone <本仓库地址> ~/.agents/skills/ego-reach
 ```
 
 依赖（按需装，脚本会自己报缺什么）：
@@ -47,7 +47,7 @@ git clone https://github.com/feynmannoy/ego-reach ~/.agents/skills/agent-reach
 ## 快速开始
 
 ```bash
-S=~/.agents/skills/agent-reach/scripts
+S=~/.agents/skills/ego-reach/scripts
 
 bash $S/ego.sh state all          # 各站登录态（唯一真相，缓存 10 分钟）
 bash $S/ego.sh bili-sync          # 让 bili CLI 用上 ego lite 里的 B站登录
@@ -111,7 +111,7 @@ gh search repos "claude skills" --limit 10 --json fullName,description,stargazer
 
 ### 4. 默认不自动触发
 
-`SKILL.md` 里 `disable-model-invocation: true`：模型不会自己选它，只能由用户显式 `/skill:agent-reach` 调用。调研是重活，避免被顺手拉起。
+`SKILL.md` 里 `disable-model-invocation: true`：模型不会自己选它，只能由用户显式 `/skill:ego-reach` 调用。调研是重活，避免被顺手拉起。
 
 ### 5. 失败就停
 
@@ -120,7 +120,7 @@ gh search repos "claude skills" --limit 10 --json fullName,description,stargazer
 ## 目录结构
 
 ```
-agent-reach/
+ego-reach/
 ├── SKILL.md                        # 入口：路由表、各渠道命令、错误码、交付规范
 ├── references/
 │   ├── platforms.md                # 每站接口、字段、坑、实测记录
@@ -133,7 +133,7 @@ agent-reach/
 
 ## 安全
 
-- cookie 值不打印、不进日志、不进仓库；只在用户主动执行 `ego.sh bili-sync` 时写入本机 `~/.bilibili-cli/credential.json`（`0600`）。
+- cookie 值不打印、不进日志、不进仓库；仓库内容不含账号名、本机绝对路径等个人信息；只在用户主动执行 `ego.sh bili-sync` 时写入本机 `~/.bilibili-cli/credential.json`（`0600`）。
 - 不绕过签名/加密，不打账号接口；掘金/CSDN/V2EX 用的是站点前端自己的公开 JSON 接口，匿名可访问，随时可能变。
 - 需要登录的站点，登录动作永远交给用户在浏览器里完成。
 
@@ -146,4 +146,4 @@ agent-reach/
 
 ## 许可
 
-个人自用脚本，MIT。接口行为随上游变化，不保证稳定性。
+MIT，见 [LICENSE](LICENSE)。接口行为随上游变化，不保证稳定性。

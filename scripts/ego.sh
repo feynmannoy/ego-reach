@@ -5,7 +5,7 @@ set -uo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"
 TPL="$DIR/ego.js"
 CRED="${HOME}/.bilibili-cli/credential.json"
-CACHE="${TMPDIR:-/tmp}/agent-reach-ego-state.json"
+CACHE="${TMPDIR:-/tmp}/ego-reach-ego-state.json"
 TTL=600   # 登录态缓存 10 分钟
 
 usage() {

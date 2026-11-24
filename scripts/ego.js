@@ -1,4 +1,4 @@
-// agent-reach: ego lite 登录态读取 / B站凭据同步（不回显任何 cookie 值）
+// ego-reach: ego lite 登录态读取 / B站凭据同步（不回显任何 cookie 值）
 // 由 scripts/ego.sh 调用：__SITE__ / __ACTION__ / __CRED_PATH__ 会被替换
 const SITE = "__SITE__";
 const ACTION = "__ACTION__";

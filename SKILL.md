@@ -1,11 +1,11 @@
 ---
-name: agent-reach
+name: ego-reach
 description: >-
   只读调研多平台内容：B站/bilibili、小红书、Reddit、GitHub、掘金、CSDN、V2EX、博客园、知乎。
   Use when 用户说"调研/搜一下/看看大家怎么说/这个链接讲了啥"，目标平台在上面这批里；
   或自带 web_search / fetch 拿不到正文（登录墙、视频字幕、中文站内搜索差）。
   不做写操作（发帖、评论、点赞、投币、三连、私信）；不代用户登录、不索要 Cookie 或密码。
-  本 skill 由 disable-model-invocation 关闭自动路由，只能由用户显式 /skill:agent-reach 触发。
+  本 skill 由 disable-model-invocation 关闭自动路由，只能由用户显式 /skill:ego-reach 触发。
 disable-model-invocation: true
 metadata:
   version: "1.2.0"
@@ -13,7 +13,7 @@ metadata:
   entry: "scripts/reach.sh"
 ---
 
-# agent-reach（本机版）
+# ego-reach（本机版）
 
 三个取数后端 + 一条铁律：**登录态一律以 ego lite（ego-browser）为准，不假设、不索要、不代登**。
 

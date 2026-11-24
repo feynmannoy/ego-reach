@@ -31,7 +31,7 @@
 
 ## GitHub：`gh`
 
-- `gh auth status` 显示 keyring 登录（本机 `feynmannoy` 账号）。
+- `gh auth status` 显示 keyring 登录（用本机已登录账号）。
 - 搜索统一用 `--json <fields>` 拿结构化结果；`gh api` 可以打任意 endpoint 并 `--paginate`。
 - 代码搜索是 legacy 引擎，命中差时换 `gh api search/code -f q='keyword repo:owner/name'`。
 
@@ -153,7 +153,7 @@ https://www.zhihu.com/api/v4/search_v3?t=general&q=<kw>&correction=1&offset=0&li
 | reddit | `reddit_session` |
 
 - 读法：CDP `Network.getAllCookies`（不 navigate，秒级返回，能拿到 httpOnly 的 `SESSDATA`/`web_session`，`document.cookie` 拿不到）。
-- 结果缓存 10 分钟到 `$TMPDIR/agent-reach-ego-state.json`，`--refresh` 强制重查；`ego.sh bili-sync` 会清缓存。
+- 结果缓存 10 分钟到 `$TMPDIR/ego-reach-ego-state.json`，`--refresh` 强制重查；`ego.sh bili-sync` 会清缓存。
 - 只输出 `login: true/false` 和命中的 cookie 名，值永不落地到日志。
 
 ## 已知限制
